@@ -20,9 +20,9 @@ public class Main {
 		EmailService emailService = new EmailManager();
 		AuthService authService = new AuthManager(userService, emailService);
 		authService.register(user1);
-		authService.login(user1.getGmail(), user1.getPassword());
+		authService.login(user1.getEmail(), user1.getPassword());
 		AuthService googleAuthService = new GoogleAuthManagerAdapter();
-		googleAuthService.login(user1.getGmail(), user1.getPassword());
+		googleAuthService.login(user1.getEmail(), user1.getPassword());
 	}
 
 }

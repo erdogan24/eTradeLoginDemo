@@ -32,17 +32,17 @@ public class AuthManager implements AuthService {
 	@Override
 	public void register(User user) {
 
-		if (!userExist(user.getGmail())) {
+		if (!userExist(user.getEmail())) {
 			System.out.println("Bu gmail zaten kullanılıyor!");
 			return;
 		}
 		boolean result = BusinessRules.RunRules(checkPassword(user.getPassword()),
-				checkName(user.getFirstName(), user.getLastName()), checkEmailPattern(user.getGmail()));
+				checkName(user.getFirstName(), user.getLastName()), checkEmailPattern(user.getEmail()));
 
 		if (result == true) {
 			System.out.println("Kayýt baþarýlý");
 			System.out.println("Doðrulama e postasý gönderildi");
-			emailService.send(user.getGmail(), "Lütfen týklayýn");
+			emailService.send(user.getEmail(), "Lütfen týklayýn");
 			userService.add(user);
 		} else {
 			System.out.println("Kayýt baþarýsýz");

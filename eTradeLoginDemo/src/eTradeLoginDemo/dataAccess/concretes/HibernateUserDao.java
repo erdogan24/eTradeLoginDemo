@@ -36,7 +36,7 @@ public class HibernateUserDao implements UserDao {
 	@Override
 	public User getByMail(String email) {
 		for (User user : users) {
-			if (user.getGmail() == email) {
+			if (user.getEmail() == email) {
 				return user;
 			}
 		}

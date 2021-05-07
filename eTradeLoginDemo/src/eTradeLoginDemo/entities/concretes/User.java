@@ -47,12 +47,12 @@ public class User implements Entity {
 		this.lastName = lastName;
 	}
 
-	public String getGmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setGmail(String gmail) {
-		this.email = gmail;
+	public void setEmail(String gmail) {
+		this.email = email;
 	}
 
 	public String getPassword() {

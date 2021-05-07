@@ -9,7 +9,7 @@ public class GoogleAuthManagerAdapter implements AuthService {
 	@Override
 	public void login(String email, String password) {
 		GoogleAuthManager googleAuthManager = new GoogleAuthManager();
-		((AuthService) googleAuthManager).login(email, password);
+		googleAuthManager.login(email, password);
 
 	}
 
