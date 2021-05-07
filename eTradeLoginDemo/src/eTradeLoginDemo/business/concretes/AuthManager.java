@@ -26,26 +26,26 @@ public class AuthManager implements AuthService {
 			System.out.println("Böyle bir kullanıcı yok!");
 			return;
 		}
-		System.out.println("Giris basarılı hosgeldiniz.." + user.getFirstName());
+		System.out.println("Giriş başarılı hoşgeldiniz.." + user.getFirstName());
 	}
 
 	@Override
 	public void register(User user) {
 
 		if (!userExist(user.getEmail())) {
-			System.out.println("Bu gmail zaten kullanılıyor!");
+			System.out.println("Bu email zaten kullanılıyor!");
 			return;
 		}
 		boolean result = BusinessRules.RunRules(checkPassword(user.getPassword()),
 				checkName(user.getFirstName(), user.getLastName()), checkEmailPattern(user.getEmail()));
 
 		if (result == true) {
-			System.out.println("Kayýt baþarýlý");
-			System.out.println("Doðrulama e postasý gönderildi");
-			emailService.send(user.getEmail(), "Lütfen týklayýn");
+			System.out.println("Kayıt başarılı");
+			System.out.println("Dogrulama e postası gönderildi");
+			emailService.send(user.getEmail(), " Lütfen tıklayın");
 			userService.add(user);
 		} else {
-			System.out.println("Kayýt baþarýsýz");
+			System.out.println("Kayıt başarısız");
 		}
 
 	}
