@@ -43,7 +43,7 @@ Main.java         -> demo scenario
   	3.	You’ll see console outputs showing registration, login, email, and adapter actions.
 
 🧪 Example Scenario (from Main.java)
-	•	User("Erdogan", "Akpolat", "erdo98@gmail.com", "435455") is created
+	•	User("Erdogan", "Akpolat", "erdoganakpolat98@gmail.com", "FakePassword :)") is created
 	•	authService.register(user) → applies validation rules → if valid → success + verification email
 	•	authService.login(email, password) → login success/failure message
 	•	googleAuthService.login(...) → Google login simulation
